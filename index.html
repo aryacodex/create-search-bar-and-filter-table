@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet " href="style.css">
+    <title>cafe directory</title>
+</head>
+<body>
+    <h1 style="text-align:center; text-transform:uppercase; color:black;">California Cafe Directory</h1>
+
+        <input type="text" name="box" id="myInput" placeholder="search item" onkeyup="searchcafe()">
+    
+    
+    <table id="myTable">
+        
+        <tr class="header ;">
+           <th style="width:10%; background-color: aqua;">Sl no </th>
+           <th style="width:10%">Cafe Name</th>
+           <th style="width:10%">Address</th>
+           <th style="width:10%">Postal Code</th> 
+           <th style="width:10%">lat</th>
+           <th style="width:10%">Long</th>
+        
+        </tr>
+        <tr>
+           <td>1</td>
+           <td>Bazaar cafe</td>
+           <td>45250Worth Avenue,Unit A</td>
+           <td>201619</td>
+           <td>36.1152</td>
+           <td>117.521</td>
+           
+        </tr>
+        <tr>
+           <td>2</td>
+           <td>Avenue cafe</td>
+           <td>Solomos Island Road</td>
+           <td>20688</td>
+           <td>36.7783 N</td>
+           <td>119.4179 W</td>
+           
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Laakeland Memory Cafe</td>
+            <td>Macarthur Blvd</td>
+            <td>20619</td>
+            <td>36.1781 N</td>
+            <td>117.521 W</td>
+            
+         </tr>
+         <tr>
+            <td>4</td>
+            <td>Baron Memory Cafe Cafe</td>
+            <td>Worth Avenue,Unit A</td>
+            <td>20687</td>
+            <td>36.7783</td>
+            <td>119.4179</td>
+            
+         </tr>
+         <tr>
+            <td>5</td>
+            <td>Lakeshores Memory Cafe</td>
+            <td>Three Notch Road</td>
+            <td>20687</td>
+            <td>36.83</td>
+            <td>119.4179</td>
+            
+         </tr>
+         <tr>
+            <td>6</td>
+            <td>Monarch Memory Cafe</td>
+            <td>Ambey Mantion</td>
+            <td>29087</td>
+            <td>36.83</td>
+            <td>119.6</td>
+            
+         </tr>
+         </table>
+         <script>
+              const searchCafe= () =>{
+              let filter=document.getElementById('myInput') .value.toupprCase();
+              let myTable=document.getElementById('myTable');
+              let tr=myTable.getElementsByTagName('tr');
+              for(var i=0;i<tr.length;i++){
+                let td=tr[i].getElementsByTagName('td')[0];
+                if(td){
+                    let textvalue =td.textContent || td.innerHTML;
+                    if(textvalue.toupprCase().indexof(filter) > -1){
+                       tr[i].style.display="";
+                    }else{
+                        tr[i].style.display="none";
+                    }
+                    }
+                }
+              }
+         </script>
+     
+     
+     
+     
+    
+</body>
+</html>
